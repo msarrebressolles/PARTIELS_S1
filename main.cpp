@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std;
+float calculerCout(int duree, float coutH);
 
 int main() {
   const float coutHoraire = 4.0;
   int velosDispos = 20;
   int capacite = 20;
   int choix;
-  int temps;
+  int duree;
 
   do {
     cout << endl;
@@ -56,12 +57,11 @@ int main() {
       cout << endl
            << "Vous avez choisi d'estimer le coût de la location" << endl
            << endl;
-      cout << "Pendant combien de temps souhaitez-vous conserver le vélo ?"
+      cout << "Pendant combien de temps souhaitez-vous conserver le vélo ? (temps en minutes)"
            << endl
            << endl;
-      cin >> temps;
-      cout << "Le coût estimé est de " << ((temps * coutHoraire) / 60)
-           << " euros." << endl;
+      cin >> duree;
+      cout << "Le coût estimé est de " << calculerCout(duree, coutHoraire) << " euros." << endl;
       break;
 
     case 4: // Quitter application
@@ -75,4 +75,14 @@ int main() {
     }
   } while (choix != 4);
   return 0;
+}
+
+// Définition de la fonction calcul 
+float calculerCout(int duree, float coutH) { 
+const float coutHoraire = 4.0;
+  
+coutH = ((duree * coutHoraire) / 60); 
+  
+return coutH;
+
 }
