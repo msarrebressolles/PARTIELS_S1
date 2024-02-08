@@ -18,6 +18,26 @@ int main() {
  cout << "2. Restituer un vélô électrique" << endl;
  cout << "3. Estimer le coût de la location" << endl;
  cout << "4. Quitter l'application" << endl << endl;
+
+ cin >> choix;
+ cout << "Vous avez saisi : " << choix << endl << endl;
+  // traitement du choix de l'utilisateur
+  switch (choix) {
+  case 1:
+    cout << endl << "Vous avez choisi d'emprunter un vélo électrique." << endl << endl;
+    break;
+  case 2:
+    cout << endl << "Vous avez choisi de restituer un vélô électrique" << endl << endl;
+    break;
+  case 3:
+    cout << endl << "Vous avez choisi d'estimer le coût de la location" << endl << endl;
+    break;
+  case 4:
+    cout << endl << "Vous avez choisi de quitter l'application" << endl << endl;
+    break;
+  default:
+    cout << "Vous n'avez pas choisi un nombre valide" << endl << endl;
   
  return 0;
+  }
 }
