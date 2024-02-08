@@ -11,7 +11,7 @@ int main() {
  cout << "****** Gestion d'une station Vélô ******" << endl << endl;
  cout << "-----------------------------------------" << endl;
  cout << "Vélos disponibles : " << velosDispos << endl;
- cout << "Points d'attache disponibles : " << capacite << endl;
+ cout << "Points d'attache disponibles : " << capacite - velosDispos << endl;
  cout << "-----------------------------------------" << endl<< endl;
   
  cout << "1. Emprunter un vélô électrique" << endl;
