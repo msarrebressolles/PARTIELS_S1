@@ -6,6 +6,8 @@ int main() {
   int velosDispos = 20;
   int capacite = 20;
   int choix;
+  int temps;
+
   do {
     cout << endl;
     cout << "****** Gestion d'une station Vélô ******" << endl << endl;
@@ -22,26 +24,51 @@ int main() {
     cin >> choix;
     cout << "Vous avez saisi : " << choix << endl << endl;
     // traitement du choix de l'utilisateur
+
     switch (choix) {
-    case 1:
+
+    case 1: // Emprunter un vélo
       cout << endl
-           << "Vous avez choisi d'emprunter un vélo électrique." << endl
+           << "Vous avez choisi d'emprunter un vélô électrique." << endl
            << endl;
+      if (velosDispos == 0) {
+        cout << "\n";
+        cout << "Il n'y a plus de vélos disponibles." << endl;
+      } else {
+        (velosDispos--);
+      }
       break;
-    case 2:
+
+    case 2: // Restituer un vélo
       cout << endl
            << "Vous avez choisi de restituer un vélô électrique" << endl
            << endl;
+      if (velosDispos == 20) {
+        cout << "\n";
+        cout << "Station vélô complète, il n'y a plus de places disponibles."
+             << endl;
+      } else {
+        (velosDispos++);
+      }
       break;
-    case 3:
+
+    case 3: // Calculer coût
       cout << endl
            << "Vous avez choisi d'estimer le coût de la location" << endl
            << endl;
+      cout << "Pendant combien de temps souhaitez-vous conserver le vélo ?"
+           << endl
+           << endl;
+      cin >> temps;
+      cout << "Le coût estimé est de " << ((temps * coutHoraire) / 60)
+           << " euros." << endl;
       break;
-    case 4:
+
+    case 4: // Quitter application
       cout << endl
            << "Vous avez choisi de quitter l'application" << endl
            << endl;
+      cout << "Au revoir" << endl << endl;
       break;
     default:
       cout << "Vous n'avez pas choisi un nombre valide" << endl << endl;
